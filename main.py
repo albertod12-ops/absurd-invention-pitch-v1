@@ -15,6 +15,7 @@ PITCH = "A houseplant that threatens to tell the neighbours about your shower si
 
 
 def main():
+    os.umask(0o022)
     assert 1 <= len(PITCH) <= 220, "entry must be 1-220 characters"
     assert PITCH.count(".") == 1 and PITCH.endswith("."), "entry must be exactly one sentence"
     data = PITCH.encode("utf-8")
